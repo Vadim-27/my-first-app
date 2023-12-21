@@ -1,16 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+    <ApartmentsList :items="apartments" />
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ApartmentsList from './components/Apartment/ApartmentsList.vue';
+import apartments from './components/Apartment/apartments';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    ApartmentsList,
+   
+  },
+  data() {
+    return {
+      apartments,
+      apartment: {
+        id: '5f05c9dad2c9bc0f773444bc',
+        title: 'Aut qui adipisci distinctio maiores molestiae sit est inventore vero.',
+        descr: 'Non perferendis rerum a in nisi exercitationem dolorum perferendis. Eligendi sit error sed a. Facere maiores sit adipisci sequi eveniet. Qui est voluptatum maiores eos qui vitae.',
+        price: 2032,
+        rating: 4.7,
+        location: {
+          city: 'Kherson',
+        },
+        owner: {
+          name: 'Ellen',
+          phone: '115-355-5652',
+          email: 'Tracey.Morar86@hotmail.com',
+        },
+      },
+    }
+  },
+
 }
 </script>
 
