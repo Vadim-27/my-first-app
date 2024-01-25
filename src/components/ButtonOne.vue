@@ -1,5 +1,5 @@
 <template>
-    <button v-on="$listener" v-bind:type="type" :class="{ btn: true, 'btn--outlined': outlined }">
+    <button v-bind="$attrs"  v-on="$props" v-bind:type="type" :class="{ btn: true, 'btn--outlined': outlined }">
         <slot></slot>
     </button>
 </template>

@@ -1,5 +1,9 @@
 <template>
-    <select v-on="listeners" class="custom-select">
+    <select 
+    @input="$emit('update:city', $event.target.value)"
+    v-bind="$attrs" 
+   
+    class="custom-select">
     <option
       v-for="item in formatedItems"
       :key="item.value"
@@ -12,27 +16,37 @@
 <script>
 export default {
     name: 'CustomSelect',
-    props: {
+  props: {
+    city: {
+      type: String, // указываем тип пропса
+      required: true
+    },
         items: {
             type: Array,
                 required: true
             }
-    },
+  },
+    // props: ['city'],
+  emits: ['update:city'],
         computed: {
-            listeners() {
-                return {
-                    ...this.$listeners,
-                    input: event=>this.$emit('input', event.target.value)
-                }
-            },
-            formatedItems() {
-        return this.items.map(item => {
-          return typeof item === 'object'
-            ? item
-            : { value: item, label: item }
-        })
-      }
-        }
+    // listeners() {
+    //         return {
+    //           ...this.$attrs,
+        
+    //           input: event => {
+    //          console.log('select', event.target.value);
+    //             this.$emit('input', event.target.value)
+    //           }
+    //   };
+    // },
+    formatedItems() {
+      return this.items.map(item => {
+        return typeof item === 'object'
+          ? item
+          : { value: item, label: item };
+      });
+    }
+  }
         
     }
 </script>

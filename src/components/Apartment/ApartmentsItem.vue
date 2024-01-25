@@ -1,6 +1,6 @@
 <template>
     <div class="apartments-item">
-        <div apartments-item__inner>
+        <div class="apartments-item__inner">
             <img :src="imgSrc" alt="" class="apartments-item__photo"/>
         <div class="apartments-item__content">
             <p class="apartments-item__description">{{ descr }}</p>

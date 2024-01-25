@@ -31,11 +31,11 @@
                 return `width: ${this.ratingWidth}%;`
             }
     },
-        mounted() {
-            console.log("this.ratingWidth", this.ratingWidth);
-            console.log("this.rating", this.rating);
-    console.log("ratingWidthStylet", this.ratingWidthStyle);// Выводим значение в консоль после монтирования компонента
-  }
+  //       mounted() {
+  //           console.log("this.ratingWidth", this.ratingWidth);
+  //           console.log("this.rating", this.rating);
+  //   console.log("ratingWidthStylet", this.ratingWidthStyle);// Выводим значение в консоль после монтирования компонента
+  // }
 }
     
 </script>
